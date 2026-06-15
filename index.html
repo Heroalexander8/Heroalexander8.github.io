@@ -1,249 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALEXANDER QUISPE HLGUINr | Perfil Profesional y Académico</title>
-    <style>
-        :root {
-            --primary: #1e3a8a;
-            --secondary: #0284c7;
-            --dark: #1f2937;
-            --light: #f3f4f6;
-            --white: #ffffff;
-            --accent: #f59e0b;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark);
-            background-color: var(--light);
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            padding: 4rem 1rem;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .container {
-            max-width: 950px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-        section {
-            background-color: var(--white);
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-        h2 {
-            color: var(--primary);
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 0.4rem;
-            margin-bottom: 1.2rem;
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        p {
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-        ul {
-            list-style-type: none;
-        }
-        li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        li::before {
-            content: "▹";
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .badge {
-            background-color: var(--light);
-            color: var(--primary);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 0.3rem;
-        }
-        .project-title {
-            font-weight: bold;
-            color: var(--dark);
-        }
-        .btn-verify {
-            display: inline-flex;
-            align-items: center;
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-top: 0.5rem;
-            transition: background-color 0.3s;
-        }
-        .btn-verify:hover {
-            background-color: var(--secondary);
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        @media (max-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-        }
-        footer {
-            text-align: center;
-            padding: 3rem 1rem;
-            font-size: 0.9rem;
-            color: #6b7280;
-            background-color: #e5e7eb;
-            margin-top: 3rem;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alexander Quispe Holguin | Perfil Profesional</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',sans-serif;background:#e8f5ee;}
+.cv{max-width:900px;margin:0 auto;}
+header{background:#1a4731;color:#fff;padding:2.5rem 2rem;border-bottom:4px solid #2d7a50;}
+header h1{font-size:2rem;font-weight:600;letter-spacing:1px;}
+header .sub{font-size:1rem;color:#a8d5b5;margin-top:.4rem;}
+header .contacto{display:flex;gap:1.5rem;margin-top:1rem;flex-wrap:wrap;}
+header .contacto span{font-size:.85rem;color:#c8e6d0;}
+.nav-bar{background:#145228;padding:.6rem 2rem;display:flex;gap:1rem;flex-wrap:wrap;}
+.nav-bar a{color:#a8d5b5;text-decoration:none;font-size:.85rem;padding:.3rem .8rem;border-radius:6px;border:1px solid #2d7a50;}
+.nav-bar a:hover{background:#2d7a50;color:#fff;}
+.body{background:#fff;padding:2rem;}
+.section{margin-bottom:1.8rem;}
+.section h2{color:#1a4731;font-size:1.1rem;border-left:4px solid #2d7a50;padding-left:.8rem;margin-bottom:1rem;}
+.card{background:#f0f7f2;border:1px solid #c8e6d0;border-radius:8px;padding:1rem 1.2rem;margin-bottom:.8rem;}
+.card .titulo{font-weight:600;color:#145228;}
+.card .inst{color:#666;font-size:.85rem;margin-top:.2rem;}
+.card .fecha{display:inline-block;background:#2d7a50;color:#fff;font-size:.75rem;padding:.15rem .6rem;border-radius:20px;margin-top:.4rem;}
+.objetivo-box{background:#1a4731;color:#fff;border-radius:8px;padding:1.2rem 1.5rem;line-height:1.7;}
+.objetivo-box strong{color:#a8d5b5;}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem;}
+.skill{background:#f0f7f2;border:1px solid #2d7a5055;border-radius:6px;padding:.6rem;font-size:.85rem;color:#145228;text-align:center;}
+.exp-item{border-left:3px solid #2d7a50;padding-left:1rem;margin-bottom:1rem;}
+.exp-item .puesto{font-weight:600;color:#1a4731;}
+.exp-item .empresa{font-size:.9rem;color:#2d7a50;}
+.exp-item ul{margin-top:.4rem;padding-left:1rem;}
+.exp-item ul li{font-size:.85rem;color:#555;margin-bottom:.2rem;}
+.badge{display:inline-block;background:#2d7a50;color:#fff;font-size:.75rem;padding:.2rem .7rem;border-radius:20px;margin:.3rem .2rem 0 0;}
+footer{background:#1a4731;color:#a8d5b5;text-align:center;padding:1.2rem;font-size:.85rem;}
+@media(max-width:600px){header h1{font-size:1.5rem;}}
+</style>
 </head>
 <body>
-
-    <header>
-        <h1>M.Sc. Romel Percy Melgarejo Bolivar</h1>
-        <p>Ingeniero Estadístico e Informático | Especialista en TI, Ciencia de Datos y Docencia Universitaria</p>
-    </header>
-
-    <div class="container">
-        
-        <!-- SECCIÓN 1: RESUMEN EJECUTIVO -->
-        <section id="resumen">
-            <h2>📝 Resumen Profesional</h2>
-            <p>Profesional peruano de la ingeniería con competencias avanzadas en Ciencia de Datos, redes telemáticas, tecnologías Web y simulación de entornos tridimensionales. Sólido trasfondo en la investigación científica aplicada al ámbito de la salud y educación, respaldado por la dirección de proyectos y cargos de liderazgo institucional en la región Puno [CTI Vitae - CONCYTEC].</p>
-        </section>
-
-        <!-- SECCIÓN 2: FORMACIÓN ACADÉMICA Y IDIOMAS (DISEÑO EN CUADRÍCULA) -->
-        <div class="grid-2">
-            <section id="educacion">
-                <h2>🎓 Formación Superior</h2>
-                <ul>
-                    <li>
-                        <strong>Magíster Scientiae en Informática</strong><br>
-                        Mención en Gerencia de TIC — Universidad Nacional del Altiplano [CTI Vitae - CONCYTEC]
-                    </li>
-                    <li>
-                        <strong>Ingeniero Estadístico e Informático</strong><br>
-                        Título Profesional — Universidad Nacional del Altiplano [CTI Vitae - CONCYTEC]
-                    </li>
-                    <li>
-                        <strong>Bachiller en Ciencias Estadísticas e Informática</strong><br>
-                        Grado Académico — Universidad Nacional del Altiplano [CTI Vitae - CONCYTEC]
-                    </li>
-                    <li>
-                        <strong>Especialidad en Mecatrónica Automotriz</strong><br>
-                        Estudios Técnicos — I.S.T. José Antonio Encinas (Puno)
-                    </li>
-                </ul>
-            </section>
-
-            <section id="idiomas">
-                <h2>🌐 Competencias Lingüísticas</h2>
-                <ul>
-                    <li><strong>Quechua:</strong> Lengua Nativa (Nivel Avanzado)</li>
-                    <li><strong>Inglés:</strong> Nivel Intermedio (Lectura y Escritura)</li>
-                    <li><strong>Portugués:</strong> Nivel Intermedio (Certificado de Suficiencia)</li>
-                </ul>
-                <br>
-                <div style="text-align: center;">
-                    <a href="https://concytec.gob.pe" target="_blank" class="btn-verify">
-                        ✓ Verificar Perfil Oficial CONCYTEC
-                    </a>
-                </div>
-            </section>
-        </div>
-
-        <!-- SECCIÓN 3: EXPERIENCIA INSTITUCIONAL -->
-        <section id="experiencia">
-            <h2>💼 Experiencia Laboral e Institucional</h2>
-            <ul>
-                <li>
-                    <strong>Presidente del Capítulo de Ingenieros Estadísticos e Informáticos</strong><br>
-                    Colegio de Ingenieros del Perú — Consejo Departamental Puno
-                    <br><span class="badge">Octubre 2022 - Actualidad</span>
-                </li>
-                <li>
-                    <strong>Docente Universitario Ordinario / Investigador</strong><br>
-                    Universidad Nacional del Altiplano Puno (UNA Puno)
-                    <br><span class="badge">2020 - Actualidad</span>
-                </li>
-                <li>
-                    <strong>Docente Auxiliar Ordinario</strong><br>
-                    Universidad Nacional de Moquegua (UNAM) [CTI Vitae - CONCYTEC]
-                </li>
-            </ul>
-        </section>
-
-        <!-- SECCIÓN 4: PROPIEDAD INTELECTUAL -->
-        <section id="propiedad-intelectual">
-            <h2>🛠️ Registro de Software y Patentes (INDECOPI)</h2>
-            <p style="color: #6b7280; font-size: 0.9rem; margin-bottom: 1rem;">Soluciones tecnológicas y sistemas con derechos de autor reconocidos por el Estado Peruano:</p>
-            <ul>
-                <li>
-                    <span class="project-title">Criptologin</span> — Módulo integrable de validación de usuarios mediante token USB DNI electrónico (Reg. 31152022) [CTI Vitae - CONCYTEC].
-                </li>
-                <li>
-                    <span class="project-title">Enviromaker</span> — Software de procesamiento y generación de ambientes tridimensionales (Reg. 31132022) [CTI Vitae - CONCYTEC].
-                </li>
-                <li>
-                    <span class="project-title">GLPAK GUI</span> — Interfaz gráfica para renderizado 3D en ventanas Win GDI+ (Reg. 31122022) [CTI Vitae - CONCYTEC].
-                </li>
-                <li>
-                    <span class="project-title">Plataforma de Certificación Electrónica</span> — Desarrollo arquitectónico de software para emisión de firmas seguras (Reg. 1382017) [CTI Vitae - CONCYTEC].
-                </li>
-            </ul>
-        </section>
-
-        <!-- SECCIÓN 5: PRODUCCIÓN CIENTÍFICA -->
-        <section id="investigacion">
-            <h2>🔬 Producción Científica e Investigación</h2>
-            <ul>
-                <li>
-                    <strong>Capítulo de Libro (2023):</strong> "Predicción de diabetes en mujeres mediante un modelo probabilístico basado en Redes Bayesianas" en la publicación internacional <em>O Cuidado em Saúde Baseado em Evidências</em> [CTI Vitae - CONCYTEC].
-                </li>
-                <li>
-                    <strong>Artículo de Revista (2022):</strong> "Arquitectura pervasiva con tecnologías WebRTC híbridas para el desarrollo de un framework Modelo Vista Controlador de tiempo real" [CTI Vitae - CONCYTEC].
-                </li>
-                <li>
-                    <strong>Tesis de Postgrado (2021):</strong> "Redes privadas virtuales multimedia y su influencia en la seguridad de la información" — Universidad Nacional del Altiplano.
-                </li>
-            </ul>
-            
-            <!-- CONTENEDOR DE ENLACES DE VERIFICACIÓN -->
+<div class="cv">
+<header>
+  <h1>Alexander Quispe Holguin</h1>
+  <div class="sub">Estudiante de Ingeniería Estadística e Informática | Operador de Computadoras</div>
+  <div class="contacto">
+    <span>📍 Urb. Tepro(A) Mz. K Lt.08 — Puno</span>
+    <span>📞 940 887 425</span>
+    <span>✉️ heroalexanderholguin@gmail.com</span>
+    <span>💻 github.com/Heroalexander8</span>
+  </div>
+</header>
+<nav class="nav-bar">
+  <a href="#objetivo">Objetivo</a>
+  <a href="#educacion">Educación</a>
+  <a href="#experiencia">Experiencia</a>
+  <a href="#habilidades">Habilidades</a>
+</nav>
+<div class="body">
+  <div class="section" id="objetivo">
+    <h2>🎯 Objetivo Profesional</h2>
+    <div class="objetivo-box">
+      <strong>Meta principal:</strong> Concluir satisfactoriamente la carrera de <strong>Ingeniería Estadística e Informática</strong> en la Universidad Nacional del Altiplano (UNA Puno), desarrollando competencias en análisis de datos, programación y redes, para contribuir al desarrollo tecnológico de la región Puno y el Perú.
+    </div>
+  </div>
+  <div class="section" id="educacion">
+    <h2>🎓 Formación Académica</h2>
+    <div class="card">
+      <div class="titulo">Ingeniería Estadística e Informática</div>
+      <div class="inst">Universidad Nacional del Altiplano — UNA Puno</div>
+      <span class="fecha">2023 — En curso</span>
+    </div>
+    <div class="card">
+      <div class="titulo">Técnico en Operación de Computadoras</div>
+      <div class="inst">CETPRO — Centro de Educación Técnico Productiva, Puno</div>
+      <div class="inst">Titulado el 14 de Mayo de 2024 — Ministerio Regional de Educación</div>
+      <span class="fecha">2021 — 2023</span>
+    </div>
+  </div>
+  <div class="section" id="experiencia">
+    <h2>💼 Experiencia Laboral</h2>
+    <div class="exp-item">
+      <div class="puesto">Impulsador de Ventas — San Fernando</div>
+      <div class="empresa">Plazavea Puno | Dic 2019</div>
+      <ul>
+        <li>Recojo y exhibición de mercadería en vitrinas refrigeradas</li>
+        <li>Impulso de ventas y atención directa al cliente</li>
+        <li>Control básico de inventario y mantenimiento del área</li>
+      </ul>
+    </div>
+    <div class="exp-item">
+      <div class="puesto">Estibador / Ayudante de Construcción</div>
+      <div class="empresa">Trabajo Independiente — Puno | 2020 – 2023</div>
+      <ul>
+        <li>Carga y descarga de materiales (ladrillos, cemento, cerámicas)</li>
+        <li>Traslado de materiales entre pisos y organización según obra</li>
+        <li>Trabajo en equipo cumpliendo plazos de obra</li>
+      </ul>
+    </div>
+  </div>
+  <div class="section" id="habilidades">
+    <h2>🛠️ Habilidades</h2>
+    <div class="skill-grid">
+      <div class="skill">💻 Operador PC</div>
+      <div class="skill">🐙 GitHub Pages</div>
+      <div class="skill">🌐 HTML básico</div>
+      <div class="skill">📊 Estadística</div>
+      <div class="skill">👥 Trabajo en equipo</div>
+      <div class="skill">⏰ Responsabilidad</div>
+    </div>
+    <div style="margin-top:1rem;">
+      <span class="badge">Quechua nativo</span>
+      <span class="badge">Español nativo</span>
+      <span class="badge">Inglés básico</span>
+    </div>
+  </div>
+</div>
+<footer>Alexander Quispe Holguin &nbsp;|&nbsp; Ingeniería Estadística e Informática — UNA Puno &nbsp;|&nbsp; 2026</footer>
+</div>
+</body>
+</html>
