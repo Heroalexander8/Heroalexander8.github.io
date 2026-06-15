@@ -11,10 +11,7 @@ body{font-family:'Segoe UI',sans-serif;background:#e8f5ee;}
 .cv-wrap{max-width:900px;margin:0 auto;background:#fff;}
 header{background:#1a4731;color:#fff;padding:2rem;border-bottom:4px solid #2d7a50;}
 .header-inner{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
-.avatar-placeholder{width:100px;height:100px;border-radius:50%;border:3px solid #2d7a50;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;background:#145228;color:#a8d5b5;font-size:11px;text-align:center;gap:4px;transition:background .2s;}
-.avatar-placeholder:hover{background:#0f3d1e;}
-.avatar-placeholder i{font-size:28px;}
-#avatarInput{display:none;}
+
 .header-info{flex:1;}
 header h1{font-size:1.8rem;font-weight:600;letter-spacing:.5px;}
 header .sub{font-size:.9rem;color:#a8d5b5;margin-top:.3rem;}
@@ -91,11 +88,8 @@ footer{background:#1a4731;color:#a8d5b5;text-align:center;padding:1rem;font-size
 <header>
   <div class="header-inner">
     <div class="avatar-wrap">
-      <div class="avatar-placeholder" id="avatarBtn" onclick="document.getElementById('avatarInput').click()" title="Subir foto de perfil">
-        <i class="ti ti-user-circle"></i>
-        <span>Subir foto</span>
-      </div>
-      <input type="file" id="avatarInput" accept="image/*">
+      <img src="foto.jpg" alt="Foto de perfil Alexander Quispe Holguin"
+           style="width:100px;height:100px;border-radius:50%;border:3px solid #2d7a50;object-fit:cover;display:block;">
     </div>
     <div class="header-info">
       <h1>Alexander Quispe Holguin</h1>
@@ -316,20 +310,7 @@ function setTab(id) {
   document.querySelectorAll('.tab')[names.indexOf(id)]?.classList.add('active');
 }
 
-// --- Foto de perfil ---
-document.getElementById('avatarInput').addEventListener('change', function() {
-  const file = this.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = e => {
-    const btn = document.getElementById('avatarBtn');
-    btn.innerHTML = `<img src="${e.target.result}" style="width:100px;height:100px;border-radius:50%;object-fit:cover;display:block;" onclick="document.getElementById('avatarInput').click()">`;
-    btn.style.background = 'transparent';
-    btn.style.border = 'none';
-    btn.style.padding = '0';
-  };
-  reader.readAsDataURL(file);
-});
+
 
 // --- Descargar PDF ---
 function downloadPDF() {
