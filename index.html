@@ -8,63 +8,177 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Segoe UI',sans-serif;background:#e8f5ee;}
-.cv{max-width:900px;margin:0 auto;}
-header{background:#1a4731;color:#fff;padding:2.5rem 2rem;border-bottom:4px solid #2d7a50;}
-header h1{font-size:2rem;font-weight:600;letter-spacing:1px;}
-header .sub{font-size:1rem;color:#a8d5b5;margin-top:.4rem;}
-header .contacto{display:flex;gap:1.5rem;margin-top:1rem;flex-wrap:wrap;}
-header .contacto span{font-size:.85rem;color:#c8e6d0;}
-.nav-bar{background:#145228;padding:.6rem 2rem;display:flex;gap:1rem;flex-wrap:wrap;}
-.nav-bar a{color:#a8d5b5;text-decoration:none;font-size:.85rem;padding:.3rem .8rem;border-radius:6px;border:1px solid #2d7a50;}
+.cv-wrap{max-width:900px;margin:0 auto;background:#fff;}
+header{background:#1a4731;color:#fff;padding:2rem;border-bottom:4px solid #2d7a50;}
+.header-inner{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;}
+.avatar-placeholder{width:100px;height:100px;border-radius:50%;border:3px solid #2d7a50;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;background:#145228;color:#a8d5b5;font-size:11px;text-align:center;gap:4px;transition:background .2s;}
+.avatar-placeholder:hover{background:#0f3d1e;}
+.avatar-placeholder i{font-size:28px;}
+#avatarInput{display:none;}
+.header-info{flex:1;}
+header h1{font-size:1.8rem;font-weight:600;letter-spacing:.5px;}
+header .sub{font-size:.9rem;color:#a8d5b5;margin-top:.3rem;}
+.contacto{display:flex;gap:1rem;margin-top:.8rem;flex-wrap:wrap;}
+.contacto span{font-size:.8rem;color:#c8e6d0;}
+.nav-bar{background:#145228;padding:.5rem 1.5rem;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;justify-content:space-between;}
+.nav-links{display:flex;gap:.5rem;flex-wrap:wrap;}
+.nav-bar a{color:#a8d5b5;text-decoration:none;font-size:.8rem;padding:.25rem .7rem;border-radius:6px;border:1px solid #2d7a50;cursor:pointer;}
 .nav-bar a:hover{background:#2d7a50;color:#fff;}
-.body{background:#fff;padding:2rem;}
-.section{margin-bottom:1.8rem;}
-.section h2{color:#1a4731;font-size:1.1rem;border-left:4px solid #2d7a50;padding-left:.8rem;margin-bottom:1rem;}
-.card{background:#f0f7f2;border:1px solid #c8e6d0;border-radius:8px;padding:1rem 1.2rem;margin-bottom:.8rem;}
-.card .titulo{font-weight:600;color:#145228;}
-.card .inst{color:#666;font-size:.85rem;margin-top:.2rem;}
-.card .fecha{display:inline-block;background:#2d7a50;color:#fff;font-size:.75rem;padding:.15rem .6rem;border-radius:20px;margin-top:.4rem;}
-.objetivo-box{background:#1a4731;color:#fff;border-radius:8px;padding:1.2rem 1.5rem;line-height:1.7;}
+.btn-pdf{background:#2d7a50;color:#fff;border-color:#2d7a50;display:flex;align-items:center;gap:5px;font-size:.8rem;padding:.25rem .8rem;border-radius:6px;cursor:pointer;border:none;}
+.btn-pdf:hover{background:#1a4731;}
+.tabs{display:flex;border-bottom:2px solid #e8f5ee;background:#fff;overflow-x:auto;}
+.tab{padding:.8rem 1.2rem;font-size:.85rem;cursor:pointer;color:#666;border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;}
+.tab.active{color:#1a4731;border-bottom-color:#2d7a50;font-weight:600;}
+.tab-content{display:none;padding:1.5rem;}
+.tab-content.active{display:block;}
+.section{margin-bottom:1.4rem;}
+.section h2{color:#1a4731;font-size:1rem;border-left:4px solid #2d7a50;padding-left:.7rem;margin-bottom:1rem;}
+.card{background:#f0f7f2;border:1px solid #c8e6d0;border-radius:8px;padding:.9rem 1.1rem;margin-bottom:.7rem;}
+.card .titulo{font-weight:600;color:#145228;font-size:.9rem;}
+.card .inst{color:#666;font-size:.82rem;margin-top:.2rem;}
+.card .fecha{display:inline-block;background:#2d7a50;color:#fff;font-size:.72rem;padding:.12rem .55rem;border-radius:20px;margin-top:.35rem;}
+.objetivo-box{background:#1a4731;color:#fff;border-radius:8px;padding:1.1rem 1.3rem;line-height:1.7;font-size:.88rem;}
 .objetivo-box strong{color:#a8d5b5;}
-.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem;}
-.skill{background:#f0f7f2;border:1px solid #2d7a5055;border-radius:6px;padding:.6rem;font-size:.85rem;color:#145228;text-align:center;}
-.exp-item{border-left:3px solid #2d7a50;padding-left:1rem;margin-bottom:1rem;}
-.exp-item .puesto{font-weight:600;color:#1a4731;}
-.exp-item .empresa{font-size:.9rem;color:#2d7a50;}
-.exp-item ul{margin-top:.4rem;padding-left:1rem;}
-.exp-item ul li{font-size:.85rem;color:#555;margin-bottom:.2rem;}
-.badge{display:inline-block;background:#2d7a50;color:#fff;font-size:.75rem;padding:.2rem .7rem;border-radius:20px;margin:.3rem .2rem 0 0;}
-footer{background:#1a4731;color:#a8d5b5;text-align:center;padding:1.2rem;font-size:.85rem;}
-@media(max-width:600px){header h1{font-size:1.5rem;}}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.5rem;}
+.skill{background:#f0f7f2;border:1px solid #2d7a5055;border-radius:6px;padding:.55rem;font-size:.82rem;color:#145228;text-align:center;}
+.exp-item{border-left:3px solid #2d7a50;padding-left:.9rem;margin-bottom:.9rem;}
+.exp-item .puesto{font-weight:600;color:#1a4731;font-size:.9rem;}
+.exp-item .empresa{font-size:.85rem;color:#2d7a50;}
+.exp-item ul{margin-top:.35rem;padding-left:1rem;}
+.exp-item ul li{font-size:.82rem;color:#555;margin-bottom:.2rem;}
+.badge{display:inline-block;background:#2d7a50;color:#fff;font-size:.72rem;padding:.18rem .65rem;border-radius:20px;margin:.25rem .2rem 0 0;}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:1.2rem;}
+.stat-card{background:#f0f7f2;border:1px solid #c8e6d0;border-radius:10px;padding:1rem;text-align:center;}
+.stat-card .num{font-size:2rem;font-weight:700;color:#1a4731;}
+.stat-card .lbl{font-size:.78rem;color:#555;margin-top:.2rem;}
+.skill-bar-item{margin-bottom:.8rem;}
+.skill-bar-label{display:flex;justify-content:space-between;font-size:.83rem;margin-bottom:.25rem;color:#333;}
+.skill-bar-track{background:#e0ede6;border-radius:20px;height:8px;overflow:hidden;}
+.skill-bar-fill{height:8px;border-radius:20px;background:linear-gradient(90deg,#2d7a50,#1a4731);transition:width 1s ease;width:0%;}
+.topic-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem;}
+.topic-card{background:#f0f7f2;border:1px solid #c8e6d0;border-radius:10px;padding:1rem;transition:transform .2s;cursor:default;}
+.topic-card:hover{transform:translateY(-2px);border-color:#2d7a50;}
+.topic-card i{font-size:28px;color:#2d7a50;}
+.topic-card h3{font-size:.88rem;font-weight:600;color:#1a4731;margin:.4rem 0 .3rem;}
+.topic-card p{font-size:.78rem;color:#555;line-height:1.5;}
+.cert-item{display:flex;align-items:center;gap:1rem;background:#f0f7f2;border:1px solid #c8e6d0;border-radius:8px;padding:.8rem 1rem;margin-bottom:.6rem;}
+.cert-icon{width:38px;height:38px;background:#1a4731;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.cert-icon i{color:#a8d5b5;font-size:20px;}
+.cert-info .titulo{font-weight:600;font-size:.85rem;color:#1a4731;}
+.cert-info .inst{font-size:.78rem;color:#555;}
+.timeline{position:relative;padding-left:1.5rem;}
+.timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:2px;background:#c8e6d0;}
+.tl-item{position:relative;margin-bottom:1.2rem;}
+.tl-dot{position:absolute;left:-1.5rem;top:3px;width:14px;height:14px;border-radius:50%;background:#2d7a50;border:2px solid #fff;box-shadow:0 0 0 2px #2d7a50;}
+.tl-content{background:#f0f7f2;border:1px solid #c8e6d0;border-radius:8px;padding:.7rem .9rem;}
+.tl-content .ttl{font-weight:600;font-size:.85rem;color:#1a4731;}
+.tl-content .meta{font-size:.78rem;color:#666;margin-top:.15rem;}
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.8rem;}
+.lang-card{background:#f0f7f2;border:1px solid #c8e6d0;border-radius:10px;padding:.9rem;text-align:center;}
+.lang-card .lname{font-weight:600;color:#1a4731;font-size:.9rem;}
+.lang-card .lvl{font-size:.75rem;color:#2d7a50;margin:.3rem 0;}
+.lang-dots{display:flex;gap:4px;justify-content:center;margin-top:.4rem;}
+.dot{width:12px;height:12px;border-radius:50%;background:#c8e6d0;}
+.dot.filled{background:#2d7a50;}
+footer{background:#1a4731;color:#a8d5b5;text-align:center;padding:1rem;font-size:.8rem;}
+@media(max-width:600px){header h1{font-size:1.3rem;}.stats-grid{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
-<div class="cv">
+<div class="cv-wrap" id="cvMain">
+
+<!-- HEADER -->
 <header>
-  <h1>Alexander Quispe Holguin</h1>
-  <div class="sub">Estudiante de Ingeniería Estadística e Informática | Operador de Computadoras</div>
-  <div class="contacto">
-    <span>📍 Urb. Tepro(A) Mz. K Lt.08 — Puno</span>
-    <span>📞 940 887 425</span>
-    <span>✉️ heroalexanderholguin@gmail.com</span>
-    <span>💻 github.com/Heroalexander8</span>
+  <div class="header-inner">
+    <div class="avatar-wrap">
+      <div class="avatar-placeholder" id="avatarBtn" onclick="document.getElementById('avatarInput').click()" title="Subir foto de perfil">
+        <i class="ti ti-user-circle"></i>
+        <span>Subir foto</span>
+      </div>
+      <input type="file" id="avatarInput" accept="image/*">
+    </div>
+    <div class="header-info">
+      <h1>Alexander Quispe Holguin</h1>
+      <div class="sub">Estudiante de Ingeniería Estadística e Informática · Operador de Computadoras</div>
+      <div class="contacto">
+        <span><i class="ti ti-map-pin" style="font-size:13px"></i> Urb. Tepro(A) Mz. K Lt.08 — Puno</span>
+        <span><i class="ti ti-phone" style="font-size:13px"></i> 940 887 425</span>
+        <span><i class="ti ti-mail" style="font-size:13px"></i> heroalexanderholguin@gmail.com</span>
+        <span><i class="ti ti-brand-github" style="font-size:13px"></i> github.com/Heroalexander8</span>
+      </div>
+    </div>
   </div>
 </header>
+
+<!-- NAV BAR -->
 <nav class="nav-bar">
-  <a href="#objetivo">Objetivo</a>
-  <a href="#educacion">Educación</a>
-  <a href="#experiencia">Experiencia</a>
-  <a href="#habilidades">Habilidades</a>
+  <div class="nav-links">
+    <a onclick="setTab('dashboard')"><i class="ti ti-dashboard" style="font-size:13px"></i> Dashboard</a>
+    <a onclick="setTab('perfil')"><i class="ti ti-user" style="font-size:13px"></i> Perfil</a>
+    <a onclick="setTab('experiencia')"><i class="ti ti-briefcase" style="font-size:13px"></i> Experiencia</a>
+    <a onclick="setTab('habilidades')"><i class="ti ti-tools" style="font-size:13px"></i> Habilidades</a>
+    <a onclick="setTab('temas')"><i class="ti ti-bulb" style="font-size:13px"></i> Temas de Interés</a>
+    <a onclick="setTab('logros')"><i class="ti ti-award" style="font-size:13px"></i> Logros</a>
+  </div>
+  <button class="btn-pdf" onclick="downloadPDF()">
+    <i class="ti ti-download" style="font-size:14px"></i> Descargar PDF
+  </button>
 </nav>
-<div class="body">
-  <div class="section" id="objetivo">
-    <h2>🎯 Objetivo Profesional</h2>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="setTab('dashboard')">Dashboard</div>
+  <div class="tab" onclick="setTab('perfil')">Perfil</div>
+  <div class="tab" onclick="setTab('experiencia')">Experiencia</div>
+  <div class="tab" onclick="setTab('habilidades')">Habilidades</div>
+  <div class="tab" onclick="setTab('temas')">Temas de Interés</div>
+  <div class="tab" onclick="setTab('logros')">Logros</div>
+</div>
+
+<!-- TAB: DASHBOARD -->
+<div id="tab-dashboard" class="tab-content active">
+  <div class="stats-grid">
+    <div class="stat-card"><div class="num" id="cntAnios">3</div><div class="lbl"><i class="ti ti-school" style="color:#2d7a50"></i> Años en UNAP</div></div>
+    <div class="stat-card"><div class="num">6</div><div class="lbl"><i class="ti ti-code" style="color:#2d7a50"></i> Habilidades técnicas</div></div>
+    <div class="stat-card"><div class="num">2</div><div class="lbl"><i class="ti ti-certificate" style="color:#2d7a50"></i> Certificaciones</div></div>
+    <div class="stat-card"><div class="num">3</div><div class="lbl"><i class="ti ti-language" style="color:#2d7a50"></i> Idiomas</div></div>
+  </div>
+
+  <div class="section">
+    <h2><i class="ti ti-chart-bar" style="color:#2d7a50;vertical-align:-2px;margin-right:6px"></i>Progreso de habilidades</h2>
+    <div id="skillBars"></div>
+  </div>
+
+  <div class="section">
+    <h2><i class="ti ti-timeline" style="color:#2d7a50;vertical-align:-2px;margin-right:6px"></i>Línea de tiempo académica</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><div class="ttl">Inicio Ingeniería Estadística e Informática</div><div class="meta">UNA Puno · 2023 — en curso</div></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><div class="ttl">Titulación Técnico en Operación de Computadoras</div><div class="meta">CETPRO Puno · 14 de Mayo 2024</div></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><div class="ttl">Formación Técnica CETPRO</div><div class="meta">Centro de Educación Técnico Productiva · 2021–2023</div></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-content"><div class="ttl">Experiencia laboral — Impulso de Ventas San Fernando</div><div class="meta">Plazavea Puno · Dic 2019</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2><i class="ti ti-world" style="color:#2d7a50;vertical-align:-2px;margin-right:6px"></i>Idiomas</h2>
+    <div class="lang-grid">
+      <div class="lang-card"><div class="lname">Quechua</div><div class="lvl">Nativo</div><div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div></div>
+      <div class="lang-card"><div class="lname">Español</div><div class="lvl">Nativo</div><div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div><div class="dot filled"></div></div></div>
+      <div class="lang-card"><div class="lname">Inglés</div><div class="lvl">Básico</div><div class="lang-dots"><div class="dot filled"></div><div class="dot filled"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB: PERFIL -->
+<div id="tab-perfil" class="tab-content">
+  <div class="section">
+    <h2><i class="ti ti-target" style="color:#2d7a50;vertical-align:-2px;margin-right:6px"></i>Objetivo Profesional</h2>
     <div class="objetivo-box">
       <strong>Meta principal:</strong> Concluir satisfactoriamente la carrera de <strong>Ingeniería Estadística e Informática</strong> en la Universidad Nacional del Altiplano (UNA Puno), desarrollando competencias en análisis de datos, programación y redes, para contribuir al desarrollo tecnológico de la región Puno y el Perú.
     </div>
   </div>
-  <div class="section" id="educacion">
-    <h2>🎓 Formación Académica</h2>
+  <div class="section">
+    <h2><i class="ti ti-school" style="color:#2d7a50;vertical-align:-2px;margin-right:6px"></i>Formación Académica</h2>
     <div class="card">
       <div class="titulo">Ingeniería Estadística e Informática</div>
       <div class="inst">Universidad Nacional del Altiplano — UNA Puno</div>
@@ -77,9 +191,13 @@ footer{background:#1a4731;color:#a8d5b5;text-align:center;padding:1.2rem;font-si
       <span class="fecha">2021 — 2023</span>
     </div>
   </div>
-  <div class="section" id="experiencia">
-    <h2>💼 Experiencia Laboral</h2>
-    <div class="exp-item">
+</div>
+
+<!-- TAB: EXPERIENCIA -->
+<div id="tab-experiencia" class="tab-content">
+  <div class="section">
+    <h2><i class="ti ti-briefcase" style="color:#2d7a50;vertical-align:-2px;margin-right:6px"></i>Experiencia Laboral</h2>
+    <div class="exp-item" style="margin-bottom:1rem">
       <div class="puesto">Impulsador de Ventas — San Fernando</div>
       <div class="empresa">Plazavea Puno | Dic 2019</div>
       <ul>
@@ -90,7 +208,7 @@ footer{background:#1a4731;color:#a8d5b5;text-align:center;padding:1.2rem;font-si
     </div>
     <div class="exp-item">
       <div class="puesto">Estibador / Ayudante de Construcción</div>
-      <div class="empresa">Trabajo Independiente — Puno | 2020 – 2023</div>
+      <div class="empresa">Trabajo Independiente — Puno | 2020–2023</div>
       <ul>
         <li>Carga y descarga de materiales (ladrillos, cemento, cerámicas)</li>
         <li>Traslado de materiales entre pisos y organización según obra</li>
@@ -98,24 +216,141 @@ footer{background:#1a4731;color:#a8d5b5;text-align:center;padding:1.2rem;font-si
       </ul>
     </div>
   </div>
-  <div class="section" id="habilidades">
-    <h2>🛠️ Habilidades</h2>
+</div>
+
+<!-- TAB: HABILIDADES -->
+<div id="tab-habilidades" class="tab-content">
+  <div class="section">
+    <h2><i class="ti ti-tools" style="color:#2d7a50;vertical-align:-2px;margin-right:6px"></i>Habilidades Técnicas</h2>
     <div class="skill-grid">
-      <div class="skill">💻 Operador PC</div>
-      <div class="skill">🐙 GitHub Pages</div>
-      <div class="skill">🌐 HTML básico</div>
-      <div class="skill">📊 Estadística</div>
-      <div class="skill">👥 Trabajo en equipo</div>
-      <div class="skill">⏰ Responsabilidad</div>
+      <div class="skill"><i class="ti ti-device-desktop" style="color:#2d7a50"></i><br>Operador PC</div>
+      <div class="skill"><i class="ti ti-brand-github" style="color:#2d7a50"></i><br>GitHub Pages</div>
+      <div class="skill"><i class="ti ti-brand-html5" style="color:#2d7a50"></i><br>HTML básico</div>
+      <div class="skill"><i class="ti ti-chart-bar" style="color:#2d7a50"></i><br>Estadística</div>
+      <div class="skill"><i class="ti ti-users" style="color:#2d7a50"></i><br>Trabajo en equipo</div>
+      <div class="skill"><i class="ti ti-clock" style="color:#2d7a50"></i><br>Responsabilidad</div>
     </div>
-    <div style="margin-top:1rem;">
-      <span class="badge">Quechua nativo</span>
-      <span class="badge">Español nativo</span>
-      <span class="badge">Inglés básico</span>
+  </div>
+  <div class="section" style="margin-top:1rem">
+    <h2><i class="ti ti-world" style="color:#2d7a50;vertical-align:-2px;margin-right:6px"></i>Idiomas</h2>
+    <span class="badge">Quechua nativo</span>
+    <span class="badge">Español nativo</span>
+    <span class="badge">Inglés básico</span>
+  </div>
+</div>
+
+<!-- TAB: TEMAS DE INTERES -->
+<div id="tab-temas" class="tab-content">
+  <div class="section">
+    <h2><i class="ti ti-bulb" style="color:#2d7a50;vertical-align:-2px;margin-right:6px"></i>Temas que me Apasionan</h2>
+    <div class="topic-grid">
+      <div class="topic-card"><i class="ti ti-chart-scatter"></i><h3>Machine Learning</h3><p>Modelos predictivos, XGBoost, regresión. Aplicación en datos reales peruanos.</p></div>
+      <div class="topic-card"><i class="ti ti-math-function"></i><h3>Estadística Aplicada</h3><p>Análisis multivariado, series de tiempo SARIMA y modelos de regresión múltiple.</p></div>
+      <div class="topic-card"><i class="ti ti-brand-python"></i><h3>R & Python</h3><p>Programación estadística y ciencia de datos con R, Python y visualización avanzada.</p></div>
+      <div class="topic-card"><i class="ti ti-database"></i><h3>Análisis Electoral</h3><p>Modelado de datos electorales peruanos (ONPE), regresión y predicción de resultados.</p></div>
+      <div class="topic-card"><i class="ti ti-network"></i><h3>Redes e Infraestructura</h3><p>Configuración de redes, sistemas operativos y mantenimiento de equipos de cómputo.</p></div>
+      <div class="topic-card"><i class="ti ti-chart-line"></i><h3>Visualización de Datos</h3><p>Gráficos estadísticos, dashboards y reportes para comunicar resultados de análisis.</p></div>
     </div>
   </div>
 </div>
+
+<!-- TAB: LOGROS -->
+<div id="tab-logros" class="tab-content">
+  <div class="section">
+    <h2><i class="ti ti-certificate" style="color:#2d7a50;vertical-align:-2px;margin-right:6px"></i>Certificaciones</h2>
+    <div class="cert-item">
+      <div class="cert-icon"><i class="ti ti-certificate"></i></div>
+      <div class="cert-info">
+        <div class="titulo">Técnico en Operación de Computadoras</div>
+        <div class="inst">CETPRO Puno · Ministerio Regional de Educación · 14 Mayo 2024</div>
+      </div>
+    </div>
+    <div class="cert-item">
+      <div class="cert-icon"><i class="ti ti-school"></i></div>
+      <div class="cert-info">
+        <div class="titulo">Ingresante — Ingeniería Estadística e Informática</div>
+        <div class="inst">Universidad Nacional del Altiplano (UNAP) Puno · 2023</div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <h2><i class="ti ti-star" style="color:#2d7a50;vertical-align:-2px;margin-right:6px"></i>Logros Personales</h2>
+    <div class="card"><div class="titulo">Bilingüe Quechua–Español</div><div class="inst">Comunicación nativa en dos idiomas, un activo valioso para proyectos en la región andina.</div></div>
+    <div class="card"><div class="titulo">Proyectos de Análisis de Datos</div><div class="inst">Modelos de regresión con datos electorales ONPE 2026 y análisis SARIMA de criminalidad en Lima.</div></div>
+    <div class="card"><div class="titulo">Autoformación en Machine Learning</div><div class="inst">Desarrollo de pipelines XGBoost y regresión Ridge en R y Python como parte de estudios universitarios.</div></div>
+  </div>
+</div>
+
 <footer>Alexander Quispe Holguin &nbsp;|&nbsp; Ingeniería Estadística e Informática — UNA Puno &nbsp;|&nbsp; 2026</footer>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+// --- Barras de habilidades ---
+const skills = [
+  {label:'Estadística aplicada', val:80},
+  {label:'Operación de computadoras', val:90},
+  {label:'R / Python', val:65},
+  {label:'HTML básico', val:55},
+  {label:'GitHub', val:60},
+  {label:'Machine Learning', val:60},
+];
+const barsEl = document.getElementById('skillBars');
+skills.forEach(s => {
+  barsEl.innerHTML += `
+    <div class="skill-bar-item">
+      <div class="skill-bar-label"><span>${s.label}</span><span>${s.val}%</span></div>
+      <div class="skill-bar-track"><div class="skill-bar-fill" data-w="${s.val}%"></div></div>
+    </div>`;
+});
+setTimeout(() => {
+  document.querySelectorAll('.skill-bar-fill').forEach(el => el.style.width = el.dataset.w);
+}, 300);
+
+// --- Tabs ---
+function setTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  const names = ['dashboard','perfil','experiencia','habilidades','temas','logros'];
+  document.querySelectorAll('.tab')[names.indexOf(id)]?.classList.add('active');
+}
+
+// --- Foto de perfil ---
+document.getElementById('avatarInput').addEventListener('change', function() {
+  const file = this.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    const btn = document.getElementById('avatarBtn');
+    btn.innerHTML = `<img src="${e.target.result}" style="width:100px;height:100px;border-radius:50%;object-fit:cover;display:block;" onclick="document.getElementById('avatarInput').click()">`;
+    btn.style.background = 'transparent';
+    btn.style.border = 'none';
+    btn.style.padding = '0';
+  };
+  reader.readAsDataURL(file);
+});
+
+// --- Descargar PDF ---
+function downloadPDF() {
+  const el = document.getElementById('cvMain');
+  const allTabs = document.querySelectorAll('.tab-content');
+  const prev = [];
+  allTabs.forEach((t, i) => { prev[i] = t.classList.contains('active'); t.classList.add('active'); t.style.display = 'block'; });
+  const opt = {
+    margin: .5,
+    filename: 'CV_Alexander_Quispe_Holguin.pdf',
+    image: {type:'jpeg', quality:.95},
+    html2canvas: {scale:2, useCORS:true},
+    jsPDF: {unit:'in', format:'a4', orientation:'portrait'}
+  };
+  html2pdf().set(opt).from(el).save().then(() => {
+    allTabs.forEach((t, i) => { if (!prev[i]) { t.classList.remove('active'); t.style.display = ''; } });
+  });
+}
+
+// --- Años dinámicos ---
+document.getElementById('cntAnios').textContent = new Date().getFullYear() - 2023;
+</script>
 </body>
 </html>
